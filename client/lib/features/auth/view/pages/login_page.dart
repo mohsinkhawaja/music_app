@@ -3,21 +3,19 @@ import 'package:music_app/core/theme/app_pallete.dart';
 import 'package:music_app/features/auth/view/widgets/auth_gradient_button.dart';
 import 'package:music_app/features/auth/view/widgets/custom_field.dart';
 
-class SignupPage extends StatefulWidget {
-  const SignupPage({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  State<SignupPage> createState() => _SignupPageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _SignupPageState extends State<SignupPage> {
-  final nameController = TextEditingController();
+class _LoginPageState extends State<LoginPage> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final formkey = GlobalKey<FormState>();
   @override
   void dispose() {
-    nameController.dispose();
     emailController.dispose();
     passwordController.dispose();
     super.dispose();
@@ -37,7 +35,7 @@ class _SignupPageState extends State<SignupPage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const Text(
-                "Sign UP.",
+                "Sign In.",
                 style: TextStyle(
                     color: Pallete.whiteColor,
                     fontSize: 50,
@@ -45,13 +43,6 @@ class _SignupPageState extends State<SignupPage> {
               ),
               const SizedBox(
                 height: 30.0,
-              ),
-              CustomField(
-                hintText: "Name",
-                controller: nameController,
-              ),
-              const SizedBox(
-                height: 15.0,
               ),
               CustomField(
                 hintText: "Email",
@@ -69,7 +60,7 @@ class _SignupPageState extends State<SignupPage> {
                 height: 20.0,
               ),
               AuthGradientButton(
-                buttonText: "Sign Up",
+                buttonText: 'Sign In',
                 onTap: () {},
               ),
               const SizedBox(
@@ -77,12 +68,12 @@ class _SignupPageState extends State<SignupPage> {
               ),
               RichText(
                 text: const TextSpan(
-                    text: 'Already have an account? ',
+                    text: 'Don\'t have an account? ',
                     style: TextStyle(
                         fontWeight: FontWeight.w500, color: Pallete.whiteColor),
                     children: [
                       TextSpan(
-                          text: 'Sign In',
+                          text: 'Sign Up',
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: Pallete.gradient2)),
